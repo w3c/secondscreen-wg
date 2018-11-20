@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      W3C Second Screen Working Group
+    </title><!--[if IE]>
+  <script src="https://www.w3.org/2008/site/js/html5shiv.js"></script>
+  <![endif]-->
+    <link rel="Help" href="https://www.w3.org/Help/">
+    <link rel="stylesheet" href="https://www.w3.org/2008/site/css/minimum"
+    type="text/css" media="handheld, all">
+    <style type="text/css" media="print, screen and (min-width: 481px)">
+    @import url("https://www.w3.org/2008/site/css/advanced");
+    </style><!--
+    <link href="https://www.w3.org/2008/site/css/minimum" rel="stylesheet"
+    type="text/css" media=
+    "handheld, only screen and (max-device-width: 480px)">
+    <meta name="viewport" content="width=320">
+    -->
+    <link rel="stylesheet" href="https://www.w3.org/2008/site/css/print" type=
+    "text/css" media="print"><!-- Custom Stylesheet -->
+    <link rel="shortcut icon" href=
+    "https://www.w3.org/2008/site/images/favicon.ico" type="image/x-icon">
+    <style>
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+    .grouplogo {
+      background: #0D5E99;
+      height: 110px;
+    }
+
+    .grouplogo object {
+      width: 100px;
+      height: 100px;
+      margin-top: 3px;
+      margin-left: 2.3em;
+    }
+
+    .infobar {
+      right: 4em;
+      margin: 1em;
+      width: 90%;
+      float: right;
+      background-color: blue;
+      background: #DBE7F0;
+      border: 1px solid #C6D4E0;
+      border-radius: 8px;
+      -moz-border-radius: 8px;
+      padding: 0.1em 0.1em 0.1em 0.5em;
+      list-item-style: bullet;
+    }
+
+    .infobar ul {
+      list-style-type:circle;
+    }
+
+    .secondary_nav {
+      float: right;
+      margin-right: 1.5em;
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+
+    .warning {
+      font-weight: bold;
+      border: thin orange solid;
+      background: gold;
+      width: 30em;
+      margin: 1em;
+      padding: 0em 1em 1em 1em;
+      border-radius: 1em;
+    }
+
+    img.wg_logo {
+      margin-top: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 250px;
+      height: 180px;
+    }
+
+    .w3c_sec_nav > ul.secondary_nav {
+      visibility: hidden;
+    }
+
+    .w3c_leftCol {
+      display: block;
+    }
+
+    @media all and (max-width: 970px) {
+      aside.infobar {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .w3c_leftCol {
+        min-width: 120px;
+      }
+      
+      .size2on3 {
+        width: 100%;
+      }
+      
+    }
+    </style>
+  </head>
+  <body id="www-w3-org" class="w3c_public">
+    <div id="w3c_container">
+      <header id="w3c_mast">
+        <!-- #w3c_mast / Page top header -->
+        <h1 class="logo">
+          <a tabindex="2" accesskey="1" href="https://www.w3.org/"><img src=
+          "https://www.w3.org/2008/site/images/logo-w3c-mobile-lg" width="90"
+          height="53" alt="W3C"></a> <span class="alt-logo">W3C</span>
+        </h1>
+        <div id="w3c_nav">
+          <form action="https://www.w3.org/Help/search" method="get" enctype=
+          "application/x-www-form-urlencoded">
+            <!-- w3c_sec_nav is populated through js -->
+            <div class="w3c_sec_nav">
+              <!-- -->
+            </div>
+            <ul class="main_nav">
+              <!-- Main navigation menu -->
+              <li class="first-item">
+                <a href="https://www.w3.org/standards/">Standards</a>
+              </li>
+              <li>
+                <a href="https://www.w3.org/participate/">Participate</a>
+              </li>
+              <li>
+                <a href=
+                "https://www.w3.org/Consortium/membership">Membership</a>
+              </li>
+              <li class="last-item">
+                <a href="https://www.w3.org/Consortium/">About W3C</a>
+              </li>
+              <li class="search-item">
+                <div id="search-form">
+                  <input tabindex="3" class="text" name="q" value="" title=
+                  "Search"> <button id="search-submit" name="search-submit"
+                  type="submit"><img class="submit" src=
+                  "https://www.w3.org/2008/site/images/search-button" alt=
+                  "Search" width="21" height="17"></button>
+                </div>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </header><!-- /end #w3c_mast -->
+      <div id="w3c_main">
+        <div id="w3c_logo_shadow" class="w3c_leftCol">
+          <img height="32" alt="" src=
+          "https://www.w3.org/2008/site/images/logo-shadow">
+        </div>
+        <nav id="w3c_sidenavigation" class="w3c_leftCol">
+          <h2 class="offscreen">
+            Site Navigation
+          </h2>
+          <h3 class="category">
+            <span class="ribbon"><b><a href=
+            "https://labs.w3.org/unitas/?g=74168">Group Details</a></b></span>
+          </h3>
+          <ul class="theme">
+            <li>
+              <a href=
+              "https://www.w3.org/2014/secondscreen/charter-2018.html">Charter</a>
+            </li>
+            <li>
+              <a href=
+              "https://lists.w3.org/Archives/Public/public-secondscreen/">Mailing
+              List</a>
+            </li>
+            <li>
+              <a href=
+              "https://www.w3.org/2000/09/dbwg/details?group=74168&amp;public=1&amp;gs=1&amp;">
+              Group Participants</a>
+            </li>
+            <li>
+              <a href=
+              "https://www.w3.org/2004/01/pp-impl/74168/status">Royalty-Free
+              Patent Policy</a>
+            </li>
+            <li>
+              <a title="Join the Second Screen Working Group" href=
+              "https://www.w3.org/2004/01/pp-impl/74168/join">Join This
+              Group</a>
+            </li>
+          </ul>
+          <h3 class="category">
+            <span class="ribbon"><b><a href=
+            "https://www.w3.org/wiki/Second_Screen/PubStatus">Specifications</a></b></span>
+          </h3>
+          <h4 class="category">
+            <span class="ribbon"><b><a href=
+            "https://w3c.github.io/presentation-api/">Presentation
+            API</a></b></span>
+          </h4>
+          <ul class="theme">
+            <li>
+              <a href="https://github.com/w3c/presentation-api">GitHub
+              w3c/presentation-api</a>
+            </li>
+          </ul>
+          <h4 class="category">
+            <span class="ribbon"><b><a href=
+            "https://w3c.github.io/remote-playback/">Remote Playback
+            API</a></b></span>
+          </h4>
+          <ul class="theme">
+            <li>
+              <a href="https://github.com/w3c/remote-playback/">GitHub
+              w3c/remote-playback</a>
+            </li>
+          </ul>
+          <h3 class="category">
+            <span class="ribbon"><b><a href=
+            "https://www.w3.org/wiki/Second_Screen">Wiki</a></b></span>
+          </h3>
+          <ul class="theme">
+            <li>
+              <a href="https://www.w3.org/wiki/Second_Screen/Work_Mode">Work
+              Mode</a>
+            </li>
+            <li>
+              <a href=
+              "https://www.w3.org/wiki/Second_Screen/PubStatus">Publication
+              Status</a>
+            </li>
+            <li>
+              <a href=
+              "https://www.w3.org/wiki/Second_Screen/Implementation_Status">Implementation
+              Status</a>
+            </li>
+            <li>
+              <a href=
+              "https://www.w3.org/wiki/Second_Screen/Meetings">Meetings</a>
+            </li>
+          </ul><!--
+          <h3 class="category">
+            <span class="ribbon"><b>Recommendations</b></span>
+          </h3>
+          <ul class="theme">
+          </ul>
+          -->
+          <br>
+        </nav>
+        <div class="w3c_mainCol">
+          <h1 class="title">
+            Second Screen Working Group
+          </h1>
+          <div class="unit size2on3" id="maincol">
+            <p>
+              The goal of the Second Screen Working Group is to
+              define APIs that enable web pages to use secondary screens to
+              display web content. Learn more about the <a href=
+              "http://www.w3.org/2014/secondscreen/charter-2018.html">goals, scope,
+              and deliverables</a>.
+            </p>
+            <p>
+              This group works in public, with details in the <a href=
+              "https://www.w3.org/wiki/Second_Screen/Work_Mode">Work Mode</a>
+              document. A detailed list of the specifications being developed
+              by the group are listed in the <a href=
+              "https://www.w3.org/wiki/Second_Screen/PubStatus">Publication
+              Status</a> document and the latest Editor's Drafts of the working
+              group's specifications are on GitHub.
+            </p>
+            <p>
+              The W3C Team Contact for the Second Screen Working Group is
+              <a href="https://www.w3.org/People/#fd">François Daoust</a>. The
+              Chair of the Working Group is Anssi Kostiainen.
+            </p>
+            <article class="line">
+              <h2>
+                Meetings
+              </h2>
+              <ul class="show_items">
+                <li>See the <a href=
+                "https://www.w3.org/wiki/Second_Screen/Meetings">Meetings</a>
+                page for the upcoming and past meetings, agenda, and minutes.
+                </li>
+              </ul>
+            </article>
+            <article class="line">
+              <h2>
+                Shortcuts
+              </h2>
+              <ul class="show_items">
+                <li>Mailing List: <a href=
+                "https://lists.w3.org/Archives/Public/public-secondscreen/">public-secondscreen@w3.org</a>
+                </li>
+                <li>WebEx: <a href="tel:+1-617-324-0000">+1-617-324-0000</a>
+                </li>
+                <li>IRC: <a href=
+                "irc://irc.w3.org:6665#webscreens">irc.w3.org:6665#webscreens</a>
+                / <a href="http://irc.w3.org/?channels=#webscreens">IRC web
+                client</a>
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div class="unit size1on3 lastUnit" id="secondcol" style=
+          "min-width: 240px">
+            <!-- logo.jpg license: CC0 Public Domain <http://pixabay.com/en/tablet-screen-monitor-phone-pc-313002/> -->
+            <img src="logo.jpg" class="wg_logo" alt="Logo">
+            <aside class="infobar">
+              <article>
+                <h2>
+                  Related Groups
+                </h2>
+                <p class="bMargin">
+                  The <a href="https://www.w3.org/community/webscreens/">Second
+                  Screen Community Group</a> provides draft input to the
+                  standards process. For example, the Community Group produced
+                  an early version of the Presentation API specification that
+                  was used as a starting point for this <a href=
+                  "http://www.w3.org/2014/secondscreen/">Working Group</a>'s
+                  formal standards work.
+                </p>
+              </article>
+            </aside>
+          </div>
+        </div>
+      </div><!-- /end #w3c_mainCol -->
+    </div><!-- end #w3c_main -->
+    <footer id="w3c_footer">
+      <div id="w3c_footer-inner">
+        <address>
+          For further information, please email the <b>Team Contact for the
+          Second Screen Working Group</b>:<br>
+          <a href="https://www.w3.org/People/#fd">François Daoust</a>
+        </address>
+        <h2 class="offscreen">
+          Footer Navigation
+        </h2>
+        <div class="w3c_footer-nav">
+          <h3>
+            Navigation
+          </h3>
+          <ul class="footer_top_nav">
+            <li>
+              <a href="https://www.w3.org/">Home</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/standards/">Standards</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/participate/">Participate</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/Consortium/membership">Membership</a>
+            </li>
+            <li class="last-item">
+              <a href="https://www.w3.org/Consortium/">About W3C</a>
+            </li>
+          </ul>
+        </div>
+        <div class="w3c_footer-nav">
+          <h3>
+            Contact W3C
+          </h3>
+          <ul class="footer_bottom_nav">
+            <li>
+              <a href="https://www.w3.org/Consortium/contact">Contact</a>
+            </li>
+            <li>
+              <a accesskey="0" href="https://www.w3.org/Help/">Help and FAQ</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/Consortium/sup">Donate</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/Consortium/siteindex">Site Map</a>
+            </li>
+            <li>
+              <address id="w3c_signature">
+                <a href="mailto:site-comments@w3.org">Feedback</a> (<a href=
+                "https://lists.w3.org/Archives/Public/site-comments/">archive</a>)
+              </address>
+            </li>
+          </ul>
+        </div>
+        <div class="w3c_footer-nav">
+          <h3>
+            W3C Updates
+          </h3>
+          <ul class="footer_follow_nav">
+            <li>
+              <a href="https://twitter.com/W3C" title=
+              "Follow W3C on Twitter"><img src=
+              "https://www.w3.org/2008/site/images/twitter-bird" alt="Twitter"
+              class="social-icon" width="39" height="42"></a> <a href=
+              "https://identi.ca/w3c" title="See W3C on Identica"><img src=
+              "https://www.w3.org/2008/site/images/identica-logo" alt=
+              "Identica" class="social-icon" width="46" height="42"></a>
+            </li>
+          </ul>
+        </div><!-- #footer address / page signature -->
+        <p class="copyright">
+          Copyright © 2015 W3C <sup>®</sup> (<a href=
+          "http://www.csail.mit.edu/"><abbr title=
+          "Massachusetts Institute of Technology">MIT</abbr></a> , <a href=
+          "http://www.ercim.eu/"><abbr title=
+          "European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>
+          , <a href="http://www.keio.ac.jp/">Keio</a>, <a href=
+          "http://ev.buaa.edu.cn/">Beihang</a>) <a href=
+          "/Consortium/Legal/ipr-notice">Usage policies apply</a>.
+        </p>
+      </div>
+    </footer><!-- /end #footer -->
+    <div id="w3c_scripts">
+      <script type="text/javascript" src=
+      "https://www.w3.org/2008/site/js/main">
+      </script>
+    </div>
+  </body>
+</html>

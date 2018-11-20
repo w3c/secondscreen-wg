@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title> Second Screen Working Group </title>
+    <link rel="stylesheet" href="https://www.w3.org/2005/10/w3cdoc.css" type="text/css"
+      media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/pubrules-style.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.w3.org/2006/02/charter-style.css" />
+  </head>
+  <body>
+    <div id="template">
+      <ul id="navbar" style="font-size: small">
+        <li> <a href="#goals">Goals</a> </li>
+        <li> <a href="#scope">Scope</a> </li>
+        <li> <a href="#deliverables">Deliverables</a> </li>
+        <li> <a href="#coordination">Dependencies and Liaisons</a> </li>
+        <li> <a href="#participation">Participation</a> </li>
+        <li> <a href="#communication">Communication</a> </li>
+        <li> <a href="#decisions">Decision Policy</a> </li>
+        <li> <a href="#patentpolicy">Patent Policy</a> </li>
+        <li> <a href="#licensing">Licensing</a> </li>
+        <li> <a href="#about">About this Charter</a> </li>
+      </ul>
+      <p> <a href="https://www.w3.org/"><img width="72" height="48" alt="W3C" src="https://www.w3.org/Icons/w3c_home" /></a>
+      </p>
+      <h1 id="title"> Second Screen Working Group Charter </h1>
+      <p class="todo">This charter has been replaced
+      by <a href="/2014/secondscreen/charter-2018.html">a
+      newer version</a>.</p>
+      <p class="mission"> The <strong>mission</strong> of the <a href="https://www.w3.org/2014/secondscreen/">Second
+          Screen Working Group</a> is to provide specifications that enable web
+        pages to use secondary screens to display web content. </p>
+      <div class="noprint">
+        <p class="join"> <a href="https://www.w3.org/2004/01/pp-impl/74168/join">Join
+            the Second Screen Working Group</a> </p>
+      </div>
+      <table class="summary-table">
+        <tbody>
+          <tr id="Duration">
+            <th rowspan="1" colspan="1"> Start date </th>
+            <td rowspan="1" colspan="1"> 3 November 2016 </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1"> End date </th>
+            <td rowspan="1" colspan="1"> 31 January 2018 </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1"> Charter extension </th>
+            <td rowspan="1" colspan="1"> See <a href="#history">Change History</a> </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1"> Confidentiality </th>
+            <td rowspan="1" colspan="1"> Proceedings are <a href="https://www.w3.org/2015/Process-20150901/#confidentiality-levels">
+                Public</a> </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1"> Initial Chairs </th>
+            <td rowspan="1" colspan="1"> Anssi Kostiainen </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1"> Initial Team Contacts<br />
+              (FTE %: 20) </th>
+            <td rowspan="1" colspan="1"> François Daoust </td>
+          </tr>
+          <tr>
+            <th rowspan="1" colspan="1"> Usual Meeting Schedule </th>
+            <td rowspan="1" colspan="1"> Teleconferences: topic-specific calls
+              may be held<br />
+              Face-to-face: we will meet during the W3C's annual Technical
+              Plenary week; other additional F2F meetings may be scheduled (up
+              to 2 per year) <br />
+              IRC: active participants, particularly editors, regularly use the
+              <a href="irc://irc.w3.org:6665/#webscreens">#webscreens</a> W3C
+              IRC channel </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="goals">
+        <h2 id="goals"> Goals </h2>
+        <p> Web content is available on an ever expanding array of devices
+          including ebook readers, phones, tablets, laptops, auto displays, and
+          electronic billboards. These devices have a variety of display
+          screens. There are also a variety of mechanisms that allow these
+          devices to use secondary display screens available in the local
+          environment, attached by wired connections or remotely with wireless,
+          peer-to-peer media. </p>
+        <p> Common attachment methods include video ports like VGA, DisplayPort
+          or HDMI, or wirelessly through Miracast, WiDi, or AirPlay. Wireless
+          screens may be available on a local area network or over the Internet,
+          brokered by a cloud service. A device like a laptop could provide a
+          screen for a smaller device like a phone. </p>
+        <p> For many of these techniques the operating system hides how the
+          screen is attached and provides ways for native applications to use
+          the screens. Native applications on an operating system can easily use
+          these additional screens without having to know how they are attached
+          to the device. At this point, however, there is no way for a web page
+          to take advantage of these available secondary displays. </p>
+        <p> The Second Screen Working Group aims at defining simple APIs that
+          allow web applications to show and control web content on one or more
+          secondary displays. </p>
+      </div>
+      <div class="scope">
+        <h2 id="scope"> Scope </h2>
+        <p> The scope of this Working Group is to define an API that allows a
+          web application to request display of web content on a connected
+          display, with a means to communicate with and control the web content
+          from the initiating page and other authorized pages. Pages may become
+          authorized to control the web content by virtue of sharing an origin
+          with the originating page, explicit user permission, or other
+          facilities provided by the user agent. The API will hide the details
+          of the underlying connection technologies and use familiar, common web
+          technologies for messaging between the authorized pages and the web
+          content shown on the secondary display. The web content may comprise
+          HTML documents, web media types such as images, audio, video, or
+          application-specific media, depending on the capabilities of the
+          secondary display for rendering the media. Application-specific media
+          includes that whose type is known to the controlling page and the
+          connected display, but not necessarily a generic HTML user agent. </p>
+        <p> The API will provide a means to identify whether requesting display
+          on second screens is likely to be successful, i.e. whether at least
+          one secondary screen is available for display. </p>
+        <p> The API is agnostic with regard to the display connection used, and
+          also works with display connections that support video only, for
+          example, a TV connected to a laptop with an HDMI connection. In such a
+          usage scenario, the web content displayed on a connected display must
+          be rendered and converted to video before it is sent to a second
+          screen. The user agent may use whatever means the operating system
+          provides to prepare and send the video to a second screen. Any
+          interaction between the authorized web pages and the content displayed
+          on a secondary screen would happen within the bounds of the initiating
+          device since both the pages and the content are rendered on that same
+          device, and only a video representation is sent to the second screen.
+        </p>
+        <p> Alternatively, if the second screen device understands some other
+          means of transmitting content to a display and a means of two-way
+          message passing, the web content can be rendered by the remote device.
+          In this scenario, a URL to the content to be displayed is sent to the
+          secondary display to be rendered there. Because the content is
+          rendered separately from the initiating user agent, pages hosted by
+          other user agents may be authorized to control the remotely rendered
+          content at the same time. </p>
+        <p> For a requested piece of web content, how and by which device the
+          content is rendered is an implementation detail. The user agent is
+          responsible for determining which secondary displays are compatible
+          with the content that is requested to be shown through the API. </p>
+        <p> Sending content to a connected display creates a presentation
+          session. Applications can create multiple presentation sessions to
+          control multiple displays, although synchronization between them is
+          not currently supported by the API. </p>
+        <p> The specifications produced by this Working Group will include
+          security and privacy considerations. Specifically, the user must
+          always be in control of privacy-sensitive information that may be
+          conveyed through the APIs, such as the visibility or access to
+          secondary displays. </p>
+        <p> Members of the Working Group should review other Working Groups'
+          deliverables that are identified as being relevant to the Working
+          Group's mission. </p>
+        <h3> Success Criteria </h3>
+        <p> To advance to <a href="https://www.w3.org/2015/Process-20150901/#RecsCR">Proposed
+            Recommendation</a>, each specification is expected to have two
+          independent implementations of each feature defined in the
+          specification. </p>
+        <p> To advance to Proposed Recommendation, interoperability between the
+          independent implementations should be demonstrated. Interoperable user
+          agents hosting the same Presentation API web application should be
+          able to render the same content with the same functionality on
+          supported secondary displays that are compatible with the content to
+          render. </p>
+        <h3 id="out-of-scope"> Out of Scope </h3>
+        <p> The specifications defined by this Working Group abstract away the
+          means of connecting and different connection technologies. For
+          example, the following are out of scope: </p>
+        <ul>
+          <li>Lower level APIs that expose features of different connection
+            technologies </li>
+          <li>How second screens are connected to the primary device (e.g. Video
+            Port, HDMI, WiDi, Miracast, AirPlay) </li>
+          <li>How the user agent prepares and sends the screen contents to the
+            second screen </li>
+        </ul>
+        <p> This Working Group will not define or mandate network protocols for
+          sharing content between user agents and secondary displays. For
+          example, the following are out of scope: </p>
+        <ul>
+          <li>Discovery of wireless secondary displays by the primary user agent</li>
+          <li>Establishment of a messaging channel between the two parties,
+            including message addressing, security and authentication</li>
+          <li>Negotiation of a media streaming session between devices</li>
+          <li>Network transport of media data</li>
+        </ul>
+        <p> To facilitate interoperability among user agents and display devices
+          and encourage adoption of the API, the group may informatively
+          reference existing suites of protocols, either directly in the
+          Presentation API deliverable or in a non-normative companion Note.
+          This Working Group will monitor the outcomes of related discussions in
+          the <a href="http://www.w3.org/community/webscreens/">Second Screen
+            Community Group</a> in particular. </p>
+        <p> Content mirroring, whereby a web application requests display of the
+          content shown in its own browsing context (i.e., page) on a secondary
+          display, is out of scope. If a web application requests display of
+          itself (same URL) on a connected display, a new browsing context will
+          be created with that URL and rendered on the connected display. </p>
+        <p> This Working Group will not define or mandate any video or audio
+          codecs. </p>
+      </div>
+      <div>
+        <h2 id="deliverables"> Deliverables </h2>
+        <p> Draft state indicates the state of the deliverable at the time of
+          the call for participation. Expected completion indicates when the
+          deliverable is projected to become a Recommendation, or otherwise
+          reach a stable state. </p>
+        <h3 id="rec-track"> Normative Specifications </h3>
+        <p> The Working Group will deliver at least the following
+          specifications: </p>
+        <dl>
+          <dt> <a href="http://www.w3.org/TR/presentation-api/">Presentation
+              API</a> </dt>
+          <dd>
+            <p> An API that allows a web application to request display of web
+              content on a connected display, with a means to communicate with
+              and control the web content from the initiating page and other
+              authorized pages. </p>
+            <p class="draft-status"> <b>Draft state:</b> <a href="http://www.w3.org/TR/2016/CR-presentation-api-20160714/">
+                CR</a> / Stable </p>
+            <p class="milestone"> <b>Expected completion:</b> Q2 2017 </p>
+          </dd>
+          <dt> Presentation API Level 2 </dt>
+          <dd>
+            <p> A second version of the Presentation API that integrates
+              features which the Working Group resolved not to include in the
+              first version in the interest of time, feedback from Web
+              developers on the first version, as well as stable features
+              matured in the <a href="http://www.w3.org/community/webscreens/">Second
+                Screen Community Group</a>, provided they fall within the scope
+              of this Working Group. The Working Group's issue tracker lists <a
+                href="https://github.com/w3c/presentation-api/issues?q=label%3Av2">
+                examples of features</a> that may be integrated. </p>
+            <p class="draft-status"> <b>Draft state:</b> No draft (builds on
+              the CR) / Exploring </p>
+            <p class="milestone"> <b>Expected completion:</b> Progress on this
+              specification depends on the adoption of the first version of the
+              Presentation API and on the outcomes of discussions within the
+              companion <a href="http://www.w3.org/community/webscreens/">Second
+                Screen Community Group</a>. This Working Group does not expect
+              to complete this specification by the end of this charter and may
+              request to be re-chartered to finalize this work, possibly with a
+              different scope. </p>
+          </dd>
+          <dt> <a href="http://www.w3.org/TR/remote-playback/">Remote Playback
+              API</a> </dt>
+          <dd>
+            <p> An API that allows a web application to request display of media
+              content on a connected display, with a means to control the remote
+              playback from the initiating page and other authorized pages. </p>
+            <p class="draft-status"> <b>Draft state:</b> <a href="http://www.w3.org/TR/2016/WD-remote-playback-20160714/">
+                FPWD</a> / Refining </p>
+            <p class="milestone"> <b>Expected completion:</b> Q3 2017 </p>
+          </dd>
+        </dl>
+        <p> The Working Group may decide to group the API functions in one or
+          more specifications. </p>
+        <h3 id="other-deliverables"> Other Deliverables </h3>
+        <dl>
+          <dt> Test suite </dt>
+          <dd> A comprehensive test suite for all features of a specification is
+            necessary to assess the specification's robustness, consistency, and
+            implementability, and to promote interoperability between user
+            agents. Therefore, each specification must have a companion test
+            suite, which should be completed before transition to Candidate
+            Recommendation, and which must be completed with an implementation
+            report before transition to Proposed Recommendation. Additional
+            tests may be added to the test suite at any stage of the
+            Recommendation track, and the maintenance of a implementation report
+            is encouraged. </dd>
+          <dt> Use cases and requirements </dt>
+          <dd> The Working Group is strongly encouraging the participants to
+            create and maintain a use cases and requirements document for each
+            specification. </dd>
+          <dt> Implementation guidelines </dt>
+          <dd> To facilitate interoperability among user agents and display
+            devices and encourage adoption of the API, the group may provide
+            informative guidelines for implementors, either directly as
+            informative notes within the Presentation API or in a separate
+            non-normative group Note. </dd>
+        </dl>
+        <p> Other non-normative documents may be created for each specification,
+          for example: </p>
+        <ul>
+          <li>Primers </li>
+          <li>Non-normative schemas for language formats </li>
+          <li>Non-normative group notes </li>
+        </ul>
+        <h3> Milestones </h3>
+        <table class="roadmap">
+          <caption> Milestones </caption>
+          <tfoot>
+            <tr>
+              <td colspan="6" rowspan="1"> Note: See changes from this initial schedule on the <a href="https://www.w3.org/2014/secondscreen/">group
+                  home page</a>. </td>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr>
+              <th rowspan="1" colspan="1"> Specification </th>
+              <th rowspan="1" colspan="1"> <abbr title="First Working Draft">FPWD</abbr>
+              </th>
+              <th rowspan="1" colspan="1"> <abbr title="Candidate Recommendation">CR</abbr>
+              </th>
+              <th rowspan="1" colspan="1"> <abbr title="Proposed Recommendation">PR</abbr>
+              </th>
+              <th rowspan="1" colspan="1"> <abbr title="Recommendation">Rec</abbr>
+              </th>
+            </tr>
+            <tr>
+              <th rowspan="1" colspan="1"> Presentation API </th>
+              <td class="WD1" rowspan="1" colspan="1"> - </td>
+              <td class="CR" rowspan="1" colspan="1"> - </td>
+              <td class="PR" rowspan="1" colspan="1"> Q2 2017 </td>
+              <td class="REC" rowspan="1" colspan="1"> Q2 2017 </td>
+            </tr>
+            <tr>
+              <th rowspan="1" colspan="1"> Presentation API Level 2 </th>
+              <td class="WD1" rowspan="1" colspan="1"> Q3 2017 </td>
+              <td class="CR" rowspan="1" colspan="1"> - </td>
+              <td class="PR" rowspan="1" colspan="1"> - </td>
+              <td class="REC" rowspan="1" colspan="1"> - </td>
+            </tr>
+            <tr>
+              <th rowspan="1" colspan="1"> Remote Playback API </th>
+              <td class="WD1" rowspan="1" colspan="1"> - </td>
+              <td class="CR" rowspan="1" colspan="1"> Q2 2017 </td>
+              <td class="PR" rowspan="1" colspan="1"> Q3 2017 </td>
+              <td class="REC" rowspan="1" colspan="1"> Q4 2017 </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="dependencies">
+        <h2 id="coordination"> Dependencies and Liaisons </h2>
+        <h3 id="dependencies"> Dependencies </h3>
+        <p> The initial draft of the Presentation API was prepared by the <a href="http://www.w3.org/community/webscreens/">Second
+            Screen Community Group</a>. Upon approval of the Working Group, the
+          Community Group will cease its work on the Presentation API
+          specification. It is expected that the Community Group will recharter
+          to work on other related deliverables where it is not clear enough how
+          to proceed for it to be a work item for a Working Group. The Community
+          Group is only one possible source for work under future Working Group
+          charters, but can serve to do initial exploration for some future work
+          items. </p>
+        <p> The specifications produced by this Working Group adhere to the
+          web's security model defined in the HTML specification published by
+          the Web Platform Working Group. </p>
+        <p> Common web technologies that this Working Group could refer to for
+          messaging include Web Messaging and the Web Socket API defined by the
+          Web Platform Working Group. </p>
+        <p> Even though the scopes of the APIs are different, some of the use
+          cases that the Presentation API aims to address, in particular
+          projection of web content on second screens connected to the local
+          area network, are also in scope of the Network Service Discovery API
+          worked upon by the Device and Sensors Working Group. This Working
+          Group will liaise with the Device and Sensors Working Group, in
+          particular to help ensure consistency of supported service discovery
+          mechanisms when a user agent implements both APIs. </p>
+        <p> No external dependencies against the specifications of this Working
+          Group have been identified. </p>
+        <h3 id="liaisons"> Liaisons </h3>
+        <p> The Working Group expects to maintain contacts with at least the
+          following groups and Activities within W3C (in alphabetical order) and
+          ask for wide reviews of its deliverables before publication as
+          Candidate Recommendation, and where appropriate: </p>
+        <dl>
+          <dt><a href="http://www.w3.org/2009/dap/" id="dap"> Device and Sensors
+              Working Group </a></dt>
+          <dd> The Device and Sensors Working Group defines the Network Service
+            Discovery API that addresses some of the use cases that are in scope
+            of the Second Screen Working Group. </dd>
+          <dt><a href="http://www.w3.org/html/wg/" id="hme"> HTML Media
+              Extensions Working Group </a></dt>
+          <dd> The Second Screen Working Group may interact with the HTML Media
+            Extensions Working Group on the interaction between media extensions
+            and the Remote Playback API specification. </dd>
+          <dt><a href="http://www.w3.org/Privacy/"> Privacy Interest Group </a></dt>
+          <dd> The Second Screen Working Group intends to secure reviews on its
+            deliverables from the Privacy Interest Group to help ensure they
+            offer the right level of protection to users. </dd>
+          <dt><a href="http://www.w3.org/community/webscreens/" id="sspcg">
+              Second Screen Community Group </a></dt>
+          <dd> This group developed the initial version of the Presentation API
+            and focuses on enabling interoperability among implementations of
+            the Presentation API, encouraging implementation of the Presentation
+            API by browser vendors and establishing complementary specifications
+            for the Presentation API. The Community Group will specify a set of
+            network protocols that may warrant changes in the Presentation API.
+          </dd>
+          <dt><a id="wai" href="http://www.w3.org/WAI/"> </a><a href="http://www.w3.org/WAI/APA/">Accessible
+              Platform Architectures (APA) Working Group</a> </dt>
+          <dd> To help ensure deliverables support accessibility requirements,
+            particularly with regard to interoperability with assistive
+            technologies, and inclusion in the deliverable of guidance for
+            implementing the group’s deliverables in ways that support
+            accessibility requirements. </dd>
+          <dt><a href="http://www.w3.org/2011/webtv/"> Web and TV Interest Group
+            </a></dt>
+          <dd> This group provides use cases and requirements for second screen
+            scenarios and thus important input on the deliverables developed by
+            the Second Screen Working Group. </dd>
+          <dt><a href="http://www.w3.org/html/wg/" id="html"> Web Platform
+              Working Group </a></dt>
+          <dd> The Web Platform Working Group’s deliverables cover the security
+            model implemented in Web Browsers; as well as other relevant
+            specifications such as <cite><a href="http://www.w3.org/TR/WebIDL/">Web
+                IDL</a></cite>, <cite><a href="http://www.w3.org/TR/webmessaging/">HTML5
+                Web Messaging</a></cite>, <cite><a href="http://www.w3.org/TR/websockets/">The
+                Web Socket API</a></cite> and the <a href="http://www.w3.org/TR/html/">HTML</a>
+            specification that contain the definition of the <code>HTMLMediaElement</code>
+            interface that the Remote Playback API specification extends. </dd>
+          <dt><a href="http://www.w3.org/2011/04/webrtc/"> Web Real-Time
+              Communications Working Group </a></dt>
+          <dd> This group defines relevant or potentially relevant
+            specifications for establishing peer-to-peer communication channels
+            and for extending the Presentation API to support out-of-scope
+            features such as content mirroring. </dd>
+          <dt><a href="http://www.w3.org/Security/wiki/IG"> Web Security
+              Interest Group </a></dt>
+          <dd> The Second Screen Working Group intends to secure reviews on its
+            deliverables from the Web Security Interest Group to help ensure
+            they offer the right level of security. </dd>
+        </dl>
+        <h3 id="external-groups"> External Groups </h3>
+        <p> The Presentation API does not have strong dependencies on any given
+          set of protocols. The following is a tentative list of external bodies
+          the Working Group should collaborate with to allow the Presentation
+          API to be implemented on top of widely deployed attachment methods for
+          connected displays: </p>
+        <dl>
+          <dt><a href="http://www.dlna.org/home">DLNA</a></dt>
+          <dd> The Digital Living Network Alliance references home network
+            protocols that secondary displays may support. </dd>
+          <dt><a href="http://www.ietf.org" id="ietf">IETF</a></dt>
+          <dd> The IETF develops home network protocols that secondary displays
+            may support. </dd>
+          <dt><a href="http://www.upnp.org/">UPnP Forum</a></dt>
+          <dd> The UPnP Forum develops home network protocols that secondary
+            displays may support. </dd>
+          <dt><a href="http://www.wi-fi.org/">Wi-Fi Alliance</a></dt>
+          <dd> The Wi-Fi Alliance develops home network protocols that secondary
+            displays may support. </dd>
+        </dl>
+        <div class="participation">
+          <h2 id="participation"> Participation </h2>
+          <p> To be successful, the Second Screen Working Group is expected to
+            have 10 or more active participants for its duration, and to have
+            the participation of industry leaders in fields relevant to the
+            specifications it produces. </p>
+          <p> The Chairs and specification Editors are expected to contribute
+            half a working day per week towards the Working Group. There is no
+            minimum requirement for other Participants. This Working Group will
+            also allocate the necessary resources for building Test Suites for
+            each specification. </p>
+          <p> The group also welcomes non-Members to contribute technical
+            submissions for consideration, with the agreement from each
+            participant to Royalty-Free licensing of those submissions under the
+            W3C Patent Policy. </p>
+        </div>
+        <div class="communication">
+          <h2 id="communication"> Communication </h2>
+          <p> Teleconferences will be conducted on an as-needed basis. </p>
+          <p> This group primarily conducts its work on the public mailing list
+            <a href="http://lists.w3.org/Archives/Public/public-secondscreen/">public-secondscreen@w3.org</a>.
+            Administrative tasks may be conducted in Member-only communications.
+          </p>
+          <p> Information about the group (deliverables, participants,
+            face-to-face meetings, teleconferences, etc.) is available from the
+            <a href="https://www.w3.org/2014/secondscreen/">Second Screen
+              Working Group</a> home page. </p>
+        </div>
+        <div class="decisions">
+          <h2 id="decisions"> Decision Policy </h2>
+          <p> As explained in the W3C Process Document (<a href="http://www.w3.org/2015/Process-20150901/#Consensus">section
+              3.3</a>), this group will seek to make decisions when there is
+            consensus and with due process. The expectation is that typically,
+            an editor or other participant makes an initial proposal, which is
+            then refined in discussion with members of the group and other
+            reviewers, and consensus emerges with little formal voting being
+            required. However, if a decision is necessary for timely progress,
+            but consensus is not achieved after careful consideration of the
+            range of views presented, the Chairs should put a question out for
+            voting within the group (allowing for remote asynchronous
+            participation -- using, for example, email and/or web-based survey
+            techniques) and record a decision, along with any objections. The
+            matter should then be considered resolved unless and until new
+            information becomes available. </p>
+          <p> Any resolution taken in a face-to-face meeting or teleconference
+            is to be considered provisional until 10 working days after the
+            publication of the resolution in draft minutes sent to the working
+            groups mailing list. If no objections are raised on the mailing list
+            within that time, the resolution will be considered to have
+            consensus as a resolution of the Working Group. </p>
+          <p> This charter is written in accordance with <a href="http://www.w3.org/Consortium/Process/policies#Votes">Section
+              3.4, Votes</a> of the W3C Process Document and includes no voting
+            procedures beyond what the Process Document requires. </p>
+        </div>
+        <div class="patent">
+          <h2 id="patentpolicy"> Patent Policy </h2>
+          <p> This Working Group operates under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">W3C
+              Patent Policy</a> (5 February 2004 Version). To promote the widest
+            adoption of Web standards, W3C seeks to issue Recommendations that
+            can be implemented, according to this policy, on a Royalty-Free
+            basis. </p>
+          <p> For more information about disclosure obligations for this group,
+            please see the <a href="http://www.w3.org/2004/01/pp-impl/">W3C
+              Patent Policy Implementation</a>. </p>
+        </div>
+        <div id="licensing">
+          <h2>Licensing</h2>
+          <p> This Working Group will use the <a href="https://www.w3.org/Consortium/Legal/copyright-software">W3C
+              Software and Document license</a> for all its deliverables. </p>
+        </div>
+        <h2 id="about"> About this Charter </h2>
+        <p> This charter for the Second Screen Working Group has been created
+          according to <a href="http://www.w3.org/Consortium/Process/groups#GAGeneral">section
+            5</a> of the <a href="http://www.w3.org/Consortium/Process">Process
+            Document</a>. In the event of a conflict between this document or
+          the provisions of any charter and the W3C Process, the W3C Process
+          shall take precedence. </p>
+        <section id="history">
+          <h3> Charter History </h3>
+          <p>The following table lists details of all changes from the initial
+            charter, per the <a href="https://www.w3.org/2015/Process-20150901/#CharterReview">W3C
+              Process Document (section 5.2.3)</a>:</p>
+          <table class="history">
+            <tbody>
+              <tr>
+                <th> Charter Period </th>
+                <th> Start Date </th>
+                <th> End Date </th>
+                <th> Changes </th>
+              </tr>
+              <tr>
+                <th> <a href="https://www.w3.org/2014/secondscreen/charter.html">Initial
+                    Charter</a> </th>
+                <td> 13 October 2014 </td>
+                <td> 31 October 2016 </td>
+                <td> none </td>
+              </tr>
+              <tr>
+                <th> <a href="#">Rechartered</a> </th>
+                <td> 3 November 2016 </td>
+                <td> 31 October 2017 </td>
+                <td>
+                  <ul>
+                    <li>Group name adjusted to reflect practice</li>
+                    <li>Deliverables updated to reflect current status</li>
+                    <li>New Presentation API Level 2 deliverable mentioned</li>
+                    <li>On-going efforts on protocols in Second Screen Community
+                      Group noted</li>
+                    <li>Other adjustments: liaisons, licensing text</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th> <a href="#">Extended</a> </th>
+                <td> 17 October 2017 </td>
+                <td> 31 December 2017 </td>
+                <td> End date adjusted </td>
+              </tr>
+              <tr>
+                <th> <a href="#">Extended</a> </th>
+                <td> 1 December 2017 </td>
+                <td> 31 January 2018 </td>
+                <td> End date adjusted </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <hr />
+        <p class="copyright"> <a rel="Copyright" href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>©
+          2016 <a href="/"><abbr title="World Wide Web Consortium">W3C</abbr></a>
+          <sup>®</sup> (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+          <a href="http://www.ercim.org/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+          <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>),
+          All Rights Reserved. <abbr title="World Wide Web Consortium">W3C</abbr>
+          <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+          <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
+          and <a href="https://www.w3.org/Consortium/Legal/copyright-documents">document
+            use</a> rules apply. </p>
+      </div>
+    </div>
+  </body>
+</html>
